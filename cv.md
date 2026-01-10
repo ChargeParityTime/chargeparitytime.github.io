@@ -9,23 +9,17 @@ title: CV (English)
 
 # Curriculum Vitae
 
-## 🗣️ Languages
-* **Korean:** Native (Mother Tongue)
-* **English:** Professional Working Proficiency
-* **Japanese:** Professional Working Proficiency (Licensed Medical Doctor in Japan)
-
----
-
 ## 👤 Personal Information
 * **Name:** Wonseok Whi (위원석), M.D., Ph.D.
 * **Affiliation:** Department of Nuclear Medicine, Samsung Medical Center
 * **Address:** 81 Irwon-ro, Gangnam-gu, Seoul 06351, Republic of Korea
-* **Contact:** +82-2-3410-2648
+* **Contact:** +82-2-3410-2648, wonseok.whi@samsung.com
 
 ---
 
 ## 👨‍⚕️ Professional Experience
-* **May 2024 – Present:** Fellow, Department of Nuclear Medicine, **Samsung Medical Center**, Seoul, Korea
+* **Mar 2026 – Present:** Clinical Assistant Professor, Department of Nuclear Medicine, **Samsung Medical Center**, Seoul, Korea
+* **May 2024 – Feb 2026:** Fellow, Department of Nuclear Medicine, **Samsung Medical Center**, Seoul, Korea
 * **Mar 2021 – Apr 2024:** Public Health Doctor, Pocheon-si, Gyeonggi-do, Korea
 * **Mar 2017 – Feb 2021:** Resident, Department of Nuclear Medicine, **Seoul National University Hospital**, Seoul, Korea
 * **Mar 2016 – Feb 2017:** Intern, **Seoul National University Hospital**, Seoul, Korea
@@ -54,5 +48,12 @@ title: CV (English)
 ## 📝 Publications
 *(Please refer to the [Research](./research.html) page for the full categorized list.)*
 
+---
+
+## 🗣️ Languages
+* **Korean:** Native (Mother Tongue)
+* **English:** Professional Working Proficiency
+* **Japanese:** Professional Working Proficiency (Licensed Medical Doctor in Japan)
+* **Spanish:** Basic / Casual Conversation
 
 [🔙 Back to Home](./)
