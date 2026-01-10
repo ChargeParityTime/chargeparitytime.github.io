@@ -1,3 +1,1 @@
-# chargeparitytime.github.io
-
-# dddd
+# chargeparitytime
