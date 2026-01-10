@@ -37,10 +37,8 @@ We investigated the prognostic value of PET/CT in patients with idiopathic pulmo
 ---
 
 ### 🔗 Navigation
-* [👉 **All research works**](./research.html)
 * [👉 **Full Curriculum Vitae**](./cv.html)
+* [👉 **Research works**](./research.html)
 * [👉 **Diaries & Notes**](./diary.html)
 
 ---
-## 📝 References
-{% bibliography --cited %}
