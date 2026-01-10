@@ -2,37 +2,49 @@
 <html lang="{{ site.lang | default: "en-US" }}">
   <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    
     <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
     
     <script>
-      const currentTheme = localStorage.getItem('theme');
-      if (currentTheme) {
-        document.documentElement.setAttribute('data-theme', currentTheme);
-      }
+      const currentTheme = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', currentTheme);
     </script>
     
     {% seo %}
+    
+    <style>
+      /* 버튼 스타일 단순화 */
+      #theme-toggle {
+        cursor: pointer;
+        background: transparent;
+        border: 1px solid var(--text-color);
+        color: var(--text-color);
+        padding: 5px 10px;
+        font-size: 0.9rem;
+        border-radius: 4px;
+        margin-bottom: 20px;
+      }
+      #theme-toggle:hover {
+        opacity: 0.8;
+      }
+    </style>
   </head>
   <body>
     <div class="wrapper">
       <header>
         <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
-        
-        <button id="theme-toggle" style="cursor: pointer; background:none; border:none; font-size: 1.5rem; margin-bottom: 20px;">
-          🌙
-        </button>
+
+        <button id="theme-toggle">Light Mode</button>
 
         {% if site.header_pages %}
           <nav>
-            <ul style="list-style: none; padding: 0; margin-bottom: 20px;">
+            <ul style="list-style: none; padding: 0; margin: 20px 0;">
               {% for page_name in site.header_pages %}
                 {% assign my_page = site.pages | where: "name", page_name | first %}
                 {% if my_page %}
                   <li style="display: inline-block; margin-right: 15px;">
-                    <a href="{{ my_page.url | relative_url }}" style="font-weight: bold; font-size: 1.1em;">
+                    <a href="{{ my_page.url | relative_url }}" style="font-weight: bold;">
                       {{ my_page.title | default: my_page.url }}
                     </a>
                   </li>
@@ -43,14 +55,6 @@
         {% endif %}
 
         <p>{{ site.description | default: site.github.project_tagline }}</p>
-
-        {% if site.show_downloads %}
-          <ul class="downloads">
-            <li><a href="{{ site.github.zip_url }}">Download <strong>ZIP File</strong></a></li>
-            <li><a href="{{ site.github.tar_url }}">Download <strong>TAR Ball</strong></a></li>
-            <li><a href="{{ site.github.repository_url }}">View On <strong>GitHub</strong></a></li>
-          </ul>
-        {% endif %}
       </header>
       
       <section>
@@ -58,7 +62,7 @@
       </section>
       
       <footer>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+        <p><small>Hosted on GitHub Pages</small></p>
       </footer>
     </div>
     
@@ -67,20 +71,25 @@
     <script>
       const toggleBtn = document.getElementById('theme-toggle');
       
-      function updateIcon(theme) {
-        toggleBtn.textContent = theme === 'dark' ? '☀️' : '🌙';
+      // 현재 상태에 따라 버튼 텍스트 설정
+      function updateButtonText(theme) {
+        // 현재가 Dark면 -> 버튼은 'Light Mode'로 전환하라고 표시
+        // 현재가 Light면 -> 버튼은 'Dark Mode'로 전환하라고 표시
+        toggleBtn.textContent = theme === 'dark' ? 'Switch to Light' : 'Switch to Dark';
       }
 
-      const savedTheme = localStorage.getItem('theme') || 'light';
-      updateIcon(savedTheme);
+      // 초기 실행
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+      updateButtonText(savedTheme);
 
+      // 클릭 이벤트
       toggleBtn.addEventListener('click', () => {
         const currentTheme = document.documentElement.getAttribute('data-theme');
         const targetTheme = currentTheme === 'dark' ? 'light' : 'dark';
         
         document.documentElement.setAttribute('data-theme', targetTheme);
         localStorage.setItem('theme', targetTheme);
-        updateIcon(targetTheme);
+        updateButtonText(targetTheme);
       });
     </script>
   </body>
