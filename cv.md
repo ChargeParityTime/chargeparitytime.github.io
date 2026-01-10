@@ -1,6 +1,6 @@
 ---
 layout: default
-title: CV (English)
+title: Curriculum Vitae
 ---
 
 <div style="text-align: right; margin-bottom: 20px;">
