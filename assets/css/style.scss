@@ -1,0 +1,48 @@
+---
+---
+
+/* 기존 테마 불러오기 */
+@import "{{ site.theme }}";
+
+/* 다크 모드 색상 덮어쓰기 */
+body {
+  background-color: #1e1e1e; /* 어두운 배경 (Dark Grey) */
+  color: #d4d4d4;            /* 밝은 글자 (Light Grey) */
+}
+
+/* 링크 색상 (너무 어두우면 안 보이므로 밝은 파랑으로 변경) */
+a {
+  color: #58a6ff;
+}
+
+/* 링크에 마우스 올렸을 때 */
+a:hover {
+  color: #79c0ff;
+}
+
+/* 코드 블록 (Code Snippet) 배경 어둡게 */
+pre, code {
+  background-color: #2d2d2d;
+  color: #e6e6e6;
+  border: 1px solid #3e3e3e;
+}
+
+/* 인용구 (Blockquote) 스타일 */
+blockquote {
+  color: #999;
+  border-left-color: #444;
+}
+
+/* 헤더(제목) 색상 */
+h1, h2, h3, h4, h5, h6 {
+  color: #ffffff;
+}
+
+/* 표(Table) 스타일 */
+table th {
+  background-color: #2d2d2d;
+  border-color: #444;
+}
+table td {
+  border-color: #444;
+}
