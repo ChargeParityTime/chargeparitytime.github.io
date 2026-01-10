@@ -6,31 +6,33 @@
     
     <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
     
-    <script>
-      // 저장된 설정이 없으면 'dark'를 기본값으로 사용
-      const currentTheme = localStorage.getItem('theme') || 'dark';
-      document.documentElement.setAttribute('data-theme', currentTheme);
-    </script>
-    
-    {% seo %}
-    
     <style>
+      [data-theme="dark"] strong, [data-theme="dark"] b { color: #ffffff !important; }
+      [data-theme="dark"] h1, [data-theme="dark"] h2, [data-theme="dark"] h3, 
+      [data-theme="dark"] h4, [data-theme="dark"] h5, [data-theme="dark"] h6 { color: #e6e6e6 !important; }
+
       /* 버튼 스타일 */
       #theme-toggle {
         cursor: pointer;
         background: transparent;
-        border: 1px solid var(--text-color);
-        color: var(--text-color);
+        border: 1px solid currentColor;
+        color: currentColor;
         padding: 5px 10px;
         font-size: 0.9rem;
         border-radius: 4px;
         margin-bottom: 20px;
         transition: all 0.2s;
+        width: 100%; /* 버튼도 꽉 차게 */
       }
-      #theme-toggle:hover {
-        background-color: var(--border-color);
-      }
+      #theme-toggle:hover { opacity: 0.8; }
     </style>
+
+    <script>
+      const currentTheme = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', currentTheme);
+    </script>
+    
+    {% seo %}
   </head>
   <body>
     <div class="wrapper">
@@ -45,8 +47,8 @@
               {% for page_name in site.header_pages %}
                 {% assign my_page = site.pages | where: "name", page_name | first %}
                 {% if my_page %}
-                  <li style="display: inline-block; margin-right: 15px;">
-                    <a href="{{ my_page.url | relative_url }}" style="font-weight: bold;">
+                  <li style="display: block; margin-bottom: 10px;">
+                    <a href="{{ my_page.url | relative_url }}" style="font-weight: bold; display: block;">
                       {{ my_page.title | default: my_page.url }}
                     </a>
                   </li>
@@ -72,25 +74,15 @@
     
     <script>
       const toggleBtn = document.getElementById('theme-toggle');
-      
-      // 버튼 텍스트 업데이트 함수
       function updateButtonText(theme) {
-        if (theme === 'dark') {
-          toggleBtn.textContent = 'Switch to Light';
-        } else {
-          toggleBtn.textContent = 'Switch to Dark';
-        }
+        toggleBtn.textContent = theme === 'dark' ? 'Switch to Light' : 'Switch to Dark';
       }
-
-      // 1. 초기 실행: 현재 설정된 테마(html 태그의 data-theme)를 읽어서 버튼 텍스트 설정
       const currentThemeOnLoad = document.documentElement.getAttribute('data-theme');
       updateButtonText(currentThemeOnLoad);
 
-      // 2. 클릭 이벤트
       toggleBtn.addEventListener('click', () => {
         const currentTheme = document.documentElement.getAttribute('data-theme');
         const targetTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        
         document.documentElement.setAttribute('data-theme', targetTheme);
         localStorage.setItem('theme', targetTheme);
         updateButtonText(targetTheme);
