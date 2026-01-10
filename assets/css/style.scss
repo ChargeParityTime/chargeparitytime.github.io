@@ -1,48 +1,57 @@
 ---
 ---
 
-/* 기존 테마 불러오기 */
+/* Minimal 테마 원본 불러오기 */
 @import "{{ site.theme }}";
 
-/* 다크 모드 색상 덮어쓰기 */
+/* 색상 변수 정의 */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --link-color: #2980b9;
+  --code-bg: #f9f9f9;
+  --border-color: #e8e8e8;
+}
+
+/* 다크 모드일 때 색상 변수 */
+[data-theme="dark"] {
+  --bg-color: #1e1e1e;
+  --text-color: #d4d4d4;
+  --link-color: #58a6ff;
+  --code-bg: #2d2d2d;
+  --border-color: #444;
+}
+
+/* 실제 요소에 변수 적용 */
 body {
-  background-color: #1e1e1e; /* 어두운 배경 (Dark Grey) */
-  color: #d4d4d4;            /* 밝은 글자 (Light Grey) */
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s; /* 부드러운 전환 효과 */
 }
 
-/* 링크 색상 (너무 어두우면 안 보이므로 밝은 파랑으로 변경) */
 a {
-  color: #58a6ff;
+  color: var(--link-color);
 }
 
-/* 링크에 마우스 올렸을 때 */
-a:hover {
-  color: #79c0ff;
-}
-
-/* 코드 블록 (Code Snippet) 배경 어둡게 */
+/* 코드 블록 스타일 */
 pre, code {
-  background-color: #2d2d2d;
-  color: #e6e6e6;
-  border: 1px solid #3e3e3e;
+  background-color: var(--code-bg);
+  color: var(--text-color);
+  border-color: var(--border-color);
 }
 
-/* 인용구 (Blockquote) 스타일 */
+/* 인용구 스타일 */
 blockquote {
-  color: #999;
-  border-left-color: #444;
+  border-left-color: var(--border-color);
+  color: #888;
 }
 
-/* 헤더(제목) 색상 */
+/* 헤더 제목 등 */
 h1, h2, h3, h4, h5, h6 {
-  color: #ffffff;
+  color: var(--text-color);
 }
 
-/* 표(Table) 스타일 */
-table th {
-  background-color: #2d2d2d;
-  border-color: #444;
-}
-table td {
-  border-color: #444;
+/* 표 스타일 */
+table th, table td {
+  border-color: var(--border-color);
 }
