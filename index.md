@@ -19,9 +19,9 @@ My research bridges the gap between clinical nuclear medicine and computational 
 
 ## 🌟 Selected Work (Highlight)
 ### [Hyperbolic Disc Embedding of Functional Human Brain Connectomes]
-This study proposes a novel method to embed human brain functional connectomes into a hyperbolic space. By utilizing **hyperbolic disc embedding**, we revealed the hierarchical organization of resting-state fMRI networks {% cite whi2022hyperbolic %}.
+This study proposes a novel method to embed human brain functional connectomes into a hyperbolic space. By utilizing **hyperbolic disc embedding**, we revealed the hierarchical organization of resting-state fMRI networks.
 
-Additionally, we identified characteristic functional cores using k-core percolation analysis, offering new insights into brain topology {% cite whi2022cores %}.
+Additionally, we identified characteristic functional cores using k-core percolation analysis, offering new insights into brain topology.
 
 ---
 
@@ -29,14 +29,15 @@ Additionally, we identified characteristic functional cores using k-core percola
 I am also actively conducting clinical research to predict patient outcomes using metabolic imaging.
 
 ### 1. Prognosis in Pancreatic Cancer
-We analyzed the prognostic value of pseudotime from texture parameters of [18F]FDG PET/CT in resectable pancreatic ductal adenocarcinoma {% cite whi2025pancreatic %}.
+We analyzed the prognostic value of pseudotime from texture parameters of [18F]FDG PET/CT in resectable pancreatic ductal adenocarcinoma.
 
 ### 2. Pulmonary Fibrosis Analysis
-We investigated the prognostic value of PET/CT in patients with idiopathic pulmonary fibrosis {% cite whi2025ipf %}.
+We investigated the prognostic value of PET/CT in patients with idiopathic pulmonary fibrosis.
 
 ---
 
 ### 🔗 Navigation
+* [👉 **All research works**](./research.html)
 * [👉 **Full Curriculum Vitae**](./cv.html)
 * [👉 **Diaries & Notes**](./diary.html)
 
