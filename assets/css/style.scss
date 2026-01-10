@@ -3,34 +3,41 @@
 
 @import "{{ site.theme }}";
 
-/* 1. 기본 설정 (Dark Mode를 기본값으로) */
+/* 1. 기본 설정 (Dark Mode를 기본값으로 지정) */
 :root {
   --bg-color: #1e1e1e;       /* 배경: 어두운 회색 */
   --text-color: #d4d4d4;     /* 글자: 밝은 회색 */
   --link-color: #58a6ff;     /* 링크: 밝은 파랑 */
   --code-bg: #2d2d2d;        /* 코드박스 배경 */
   --border-color: #444;      /* 테두리 색 */
+  --bold-color: #ffffff;     /* Bold 글씨: 완전 흰색 */
 }
 
-/* 2. Light Mode일 때의 색상 (데이터 속성이 light일 때) */
+/* 2. Light Mode일 때의 색상 (override) */
 [data-theme="light"] {
   --bg-color: #ffffff;
   --text-color: #333333;
   --link-color: #2980b9;
   --code-bg: #f9f9f9;
   --border-color: #e8e8e8;
+  --bold-color: #222222;     /* Bold 글씨: 진한 검정 */
 }
 
 /* 3. 실제 적용 스타일 */
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
-  /* 부드러운 전환 효과 제거 (깜빡임 방지 위해) 혹은 짧게 설정 */
   transition: background-color 0.1s, color 0.1s;
 }
 
 a { color: var(--link-color); }
 a:hover { text-decoration: underline; }
+
+/* ★★★ 중요: Bold 폰트 색상 강제 지정 (안보임 해결) ★★★ */
+strong, b {
+  color: var(--bold-color) !important;
+  font-weight: bold;
+}
 
 /* 코드 블록 & 인용구 */
 pre, code {
