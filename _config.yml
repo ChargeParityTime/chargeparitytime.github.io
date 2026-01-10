@@ -1,7 +1,13 @@
 theme: jekyll-theme-minimal
 title: WW
-description: Professor (nuclear medicine) | Researcher | Hobbyist (physics)
+description: M.D., Ph.D. (nuclear medicine) | Hobbyist (physics)
 show_downloads: false
+
+header_pages:
+  - index.md
+  - research.md
+  - cv.md
+  - diary.md
 
 plugins:
   - jekyll-scholar
