@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
     
     <script>
+      // 저장된 설정이 없으면 'dark'를 기본값으로 사용
       const currentTheme = localStorage.getItem('theme') || 'dark';
       document.documentElement.setAttribute('data-theme', currentTheme);
     </script>
@@ -14,7 +15,7 @@
     {% seo %}
     
     <style>
-      /* 버튼 스타일 단순화 */
+      /* 버튼 스타일 */
       #theme-toggle {
         cursor: pointer;
         background: transparent;
@@ -24,9 +25,10 @@
         font-size: 0.9rem;
         border-radius: 4px;
         margin-bottom: 20px;
+        transition: all 0.2s;
       }
       #theme-toggle:hover {
-        opacity: 0.8;
+        background-color: var(--border-color);
       }
     </style>
   </head>
@@ -35,7 +37,7 @@
       <header>
         <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
 
-        <button id="theme-toggle">Light Mode</button>
+        <button id="theme-toggle">Switch Mode</button>
 
         {% if site.header_pages %}
           <nav>
@@ -71,18 +73,20 @@
     <script>
       const toggleBtn = document.getElementById('theme-toggle');
       
-      // 현재 상태에 따라 버튼 텍스트 설정
+      // 버튼 텍스트 업데이트 함수
       function updateButtonText(theme) {
-        // 현재가 Dark면 -> 버튼은 'Light Mode'로 전환하라고 표시
-        // 현재가 Light면 -> 버튼은 'Dark Mode'로 전환하라고 표시
-        toggleBtn.textContent = theme === 'dark' ? 'Switch to Light' : 'Switch to Dark';
+        if (theme === 'dark') {
+          toggleBtn.textContent = 'Switch to Light';
+        } else {
+          toggleBtn.textContent = 'Switch to Dark';
+        }
       }
 
-      // 초기 실행
-      const savedTheme = localStorage.getItem('theme') || 'dark';
-      updateButtonText(savedTheme);
+      // 1. 초기 실행: 현재 설정된 테마(html 태그의 data-theme)를 읽어서 버튼 텍스트 설정
+      const currentThemeOnLoad = document.documentElement.getAttribute('data-theme');
+      updateButtonText(currentThemeOnLoad);
 
-      // 클릭 이벤트
+      // 2. 클릭 이벤트
       toggleBtn.addEventListener('click', () => {
         const currentTheme = document.documentElement.getAttribute('data-theme');
         const targetTheme = currentTheme === 'dark' ? 'light' : 'dark';
