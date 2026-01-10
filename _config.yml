@@ -1,4 +1,15 @@
-theme: jekyll-scholar
+theme: jekyll-minimal-theme
 title: WW
 description: Professor (nuclear medicine) | Researcher | Hobbyist (physics)
 show_downloads: false
+
+plugins:
+  - jekyll-scholar
+
+# jekyll-scholar 설정 (스타일 지정 등)
+scholar:
+  style: apa
+  locale: en
+  source: ./_bibliography
+  bibliography: references.bib
+  bibliography_template: bibliography_item
