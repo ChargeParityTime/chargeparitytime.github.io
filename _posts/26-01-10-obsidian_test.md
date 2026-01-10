@@ -18,3 +18,6 @@ i\frac{\partial \Psi}{\partial t}
 	&= -\frac{1}{2m} \nabla^2 \Psi + V \Psi
 \end{aligned}
 $$
+
+---
+[Return to List]({{ "/diary.html" | relative_url }})

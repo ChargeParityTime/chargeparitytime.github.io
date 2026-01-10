@@ -14,4 +14,4 @@ I plan to upload occasional updates about:
 * Study notes on **Quantum Mechanics** or **Mathematical Physics**
 
 ---
-[Return to List](../diary.html)
+[Return to List]({{ "/diary.html" | relative_url }})

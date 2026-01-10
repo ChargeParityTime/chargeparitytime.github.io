@@ -6,4 +6,4 @@ date: 2026-01-10
 
 
 ---
-[Return to List](../diary.html)
+[Return to List]({{ "/diary.html" | relative_url }})
