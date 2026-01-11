@@ -1,7 +1,7 @@
 ---
 layout: default
-title: " "
-date: 2026-01-10
+title: " 일요일"
+date: 2026-01-11
 ---
 
 
