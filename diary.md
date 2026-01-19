@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Diaries
+permalink: /diary.html
 ---
 
 # 📔 Diaries
